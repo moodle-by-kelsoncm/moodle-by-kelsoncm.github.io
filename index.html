@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>moodle-by-kelsoncm — Ecossistema de Plugins & Ferramentas Moodle</title>
+  <meta name="description" content="Hub de projetos open source da organização moodle-by-kelsoncm: Plugins para editores (Atto, TinyMCE, TipTap), atividades interativas, blocos, ferramentas de administração e utilitários CLI." />
+  <meta property="og:title" content="moodle-by-kelsoncm — Ecossistema de Plugins & Ferramentas Moodle" />
+  <meta property="og:description" content="Editores WYSIWYG, Mapas de Imagem, Blocos de Recomendação e Ferramentas CLI para Administração Moodle." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moodle-by-kelsoncm.github.io" />
+
+  <!-- Typography: Fontshare (Satoshi + Cabinet Grotesk) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-logo">Mb</div>
+        <span>moodle-by-kelsoncm</span>
+        <span class="brand-badge">Org</span>
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Alternar Tema">
+          <i data-lucide="sun" id="themeIcon"></i>
+          <span id="themeLabel">Claro</span>
+        </button>
+        <a href="https://github.com/moodle-by-kelsoncm" target="_blank" rel="noopener" class="btn-secondary">
+          <i data-lucide="github"></i> GitHub Org
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-pill">
+        <i data-lucide="sparkles"></i> Ecossistema Open Source Moodle
+      </div>
+      <h1 class="hero-title">Plugins, Ferramentas CLI & Extensões Moodle</h1>
+      <p class="hero-subtitle">
+        Uma biblioteca completa de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, blocos visuais e utilitários CLI de alta performance para administradores.
+      </p>
+
+      <!-- SEARCH BAR -->
+      <div class="search-box">
+        <i data-lucide="search"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar plugin por nome, tipo, tecnologia ou funcionalidade..." aria-label="Buscar plugin" />
+      </div>
+    </section>
+
+    <!-- SEÇÃO 1: EDITORES & FORMATAÇÃO -->
+    <section class="category-section" id="editors-formatting">
+      <div class="section-intro">
+        <div class="section-badge"><i data-lucide="edit-3"></i> Editores & Formatação</div>
+        <h2 class="section-title">✍️ Editores & Formatação de Conteúdo</h2>
+        <p class="section-desc">
+          Plugins e utilitários de edição de texto para enriquecer a experiência de criação de conteúdos nas salas virtuais do Moodle, cobrindo os editores Atto, TinyMCE e TipTap.
+        </p>
+      </div>
+
+      <div class="section-grid">
+        <!-- 1. ATTO JUSTIFY -->
+        <article class="repo-card" data-search="moodle-atto_justify atto justify alinhamento texto editor formatação">
+          <div>
+            <div class="card-thumbnail">
+              <svg viewBox="0 0 400 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Atto Justify Preview">
+                <rect width="400" height="180" rx="8" fill="var(--color-surface-2)" />
+                <rect x="16" y="16" width="368" height="32" rx="6" fill="var(--color-surface-offset)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="28" y="26" width="16" height="12" rx="2" fill="var(--color-text-muted)" />
+                <rect x="52" y="26" width="16" height="12" rx="2" fill="var(--color-text-muted)" />
+                <rect x="76" y="24" width="20" height="16" rx="3" fill="var(--color-primary)" />
+                <rect x="80" y="28" width="12" height="2" fill="#ffffff" />
+                <rect x="80" y="32" width="12" height="2" fill="#ffffff" />
+                <rect x="80" y="36" width="12" height="2" fill="#ffffff" />
+                <rect x="16" y="60" width="368" height="104" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="32" y="76" width="336" height="8" rx="2" fill="var(--color-primary)" opacity="0.8" />
+                <rect x="32" y="92" width="336" height="8" rx="2" fill="var(--color-primary)" opacity="0.8" />
+                <rect x="32" y="108" width="336" height="8" rx="2" fill="var(--color-primary)" opacity="0.8" />
+                <rect x="32" y="124" width="336" height="8" rx="2" fill="var(--color-text-muted)" opacity="0.4" />
+              </svg>
+            </div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">📝</span>
+                <h3 class="card-title">moodle-atto_justify</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin para o editor Atto nativo do Moodle que adiciona o botão de alinhamento de texto justificado na barra de ferramentas dos editores de cursos.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Atto</span>
+              <span class="tag">Text Justify</span>
+              <span class="tag">WYSIWYG</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-atto_justify" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-atto_justify/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. TINY JUSTIFY -->
+        <article class="repo-card" data-search="moodle-tiny_justify tiny justify tinymce editor alinhamento texto">
+          <div>
+            <div class="card-thumbnail">
+              <svg viewBox="0 0 400 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Tiny Justify Preview">
+                <rect width="400" height="180" rx="8" fill="var(--color-surface-2)" />
+                <rect x="16" y="16" width="368" height="36" rx="6" fill="var(--color-surface-offset)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="28" y="26" width="24" height="16" rx="3" fill="var(--color-primary)" />
+                <rect x="60" y="28" width="14" height="12" rx="2" fill="var(--color-text-muted)" />
+                <rect x="82" y="28" width="14" height="12" rx="2" fill="var(--color-text-muted)" />
+                <rect x="16" y="64" width="368" height="100" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="32" y="78" width="336" height="8" rx="2" fill="var(--color-text-muted)" />
+                <rect x="32" y="94" width="336" height="8" rx="2" fill="var(--color-primary)" opacity="0.9" />
+                <rect x="32" y="110" width="336" height="8" rx="2" fill="var(--color-text-muted)" />
+                <rect x="32" y="126" width="336" height="8" rx="2" fill="var(--color-primary)" opacity="0.9" />
+              </svg>
+            </div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">✍️</span>
+                <h3 class="card-title">moodle-tiny_justify</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin para o editor TinyMCE no Moodle (4.1+) que integra a opção de justificar blocos de texto diretamente na barra de ferramentas do TinyMCE.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">TinyMCE</span>
+              <span class="tag">Justify</span>
+              <span class="tag">TinyMCE 6</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-tiny_justify" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-tiny_justify/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. EDITOR TIPTAP -->
+        <article class="repo-card" data-search="moodle-editor_tiptap tiptap editor wysiwyg moderno rich text">
+          <div>
+            <div class="card-thumbnail">
+              <svg viewBox="0 0 400 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Editor TipTap Preview">
+                <rect width="400" height="180" rx="8" fill="var(--color-surface-2)" />
+                <rect x="16" y="16" width="368" height="34" rx="6" fill="var(--color-surface-offset)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="28" y="26" width="16" height="14" rx="3" fill="var(--color-primary)" />
+                <rect x="52" y="26" width="16" height="14" rx="3" fill="var(--color-text-muted)" />
+                <rect x="76" y="26" width="16" height="14" rx="3" fill="var(--color-text-muted)" />
+                <rect x="16" y="60" width="368" height="104" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="32" y="74" width="120" height="12" rx="3" fill="var(--color-primary)" />
+                <rect x="32" y="94" width="336" height="8" rx="2" fill="var(--color-text-muted)" />
+                <rect x="32" y="110" width="280" height="8" rx="2" fill="var(--color-text-muted)" />
+                <rect x="32" y="126" width="220" height="8" rx="2" fill="var(--color-text-muted)" />
+              </svg>
+            </div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🚀</span>
+                <h3 class="card-title">moodle-editor_tiptap</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin de editor WYSIWYG moderno para Moodle baseado na biblioteca TipTap, oferecendo uma experiência de edição extremamente rápida e limpa.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">TipTap</span>
+              <span class="tag">Editor</span>
+              <span class="tag">WYSIWYG</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-editor_tiptap" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-editor_tiptap/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. LOCAL TINYTOOLBAR -->
+        <article class="repo-card" data-search="moodle-local_tinytoolbar local tinytoolbar configurator tinymce barra ferramentas">
+          <div>
+            <div class="card-thumbnail">
+              <svg viewBox="0 0 400 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Local Tiny Toolbar Preview">
+                <rect width="400" height="180" rx="8" fill="var(--color-surface-2)" />
+                <rect x="16" y="16" width="368" height="148" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="32" y="30" width="140" height="12" rx="3" fill="var(--color-primary)" />
+                <rect x="32" y="52" width="336" height="32" rx="4" fill="var(--color-surface-offset)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="42" y="62" width="14" height="12" rx="2" fill="var(--color-primary)" />
+                <rect x="62" y="62" width="14" height="12" rx="2" fill="var(--color-primary)" />
+                <rect x="82" y="62" width="14" height="12" rx="2" fill="var(--color-primary)" />
+                <rect x="32" y="96" width="100" height="10" rx="2" fill="var(--color-text-muted)" />
+                <rect x="32" y="114" width="200" height="8" rx="2" fill="var(--color-text-faint)" />
+              </svg>
+            </div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🛠️</span>
+                <h3 class="card-title">moodle-local_tinytoolbar</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin local para configuração e personalização centralizada dos botões e disposição das ferramentas no editor TinyMCE do Moodle.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Local Plugin</span>
+              <span class="tag">TinyMCE</span>
+              <span class="tag">Toolbar</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-local_tinytoolbar" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-local_tinytoolbar/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: ATIVIDADES -->
+    <section class="category-section" id="activities">
+      <div class="section-intro">
+        <div class="section-badge"><i data-lucide="layers"></i> Atividades Pedagogicas</div>
+        <h2 class="section-title">🧩 Atividades Moodle</h2>
+        <p class="section-desc">
+          Módulos de atividades educacionais interativas integradas ao sistema de acompanhamento e conclusão de curso do Moodle.
+        </p>
+      </div>
+
+      <div class="section-grid">
+        <!-- 5. MOD IMAGEMAP -->
+        <article class="repo-card" data-search="moodle-mod_imagemap mod imagemap mapa imagem interativo atividade navegacao curso">
+          <div>
+            <div class="card-thumbnail">
+              <svg viewBox="0 0 400 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Mod Image Map Preview">
+                <rect width="400" height="180" rx="8" fill="var(--color-surface-2)" />
+                <rect x="16" y="16" width="368" height="148" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="32" y="32" width="336" height="116" rx="6" fill="var(--color-surface-offset)" />
+                <!-- Clickable hotspot pins -->
+                <circle cx="100" cy="70" r="14" fill="var(--color-primary)" opacity="0.9" />
+                <circle cx="100" cy="70" r="6" fill="#ffffff" />
+                <circle cx="240" cy="110" r="14" fill="var(--color-secondary)" opacity="0.9" />
+                <circle cx="240" cy="110" r="6" fill="#ffffff" />
+                <circle cx="310" cy="65" r="14" fill="var(--color-accent-warm)" opacity="0.9" />
+                <circle cx="310" cy="65" r="6" fill="#ffffff" />
+              </svg>
+            </div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🗺️</span>
+                <h3 class="card-title">moodle-mod_imagemap</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Módulo de atividade para criação de mapas de imagens interativos com hotspots clicáveis e suporte a exibição condicional baseada na conclusão de atividades.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Activity Mod</span>
+              <span class="tag">Image Map</span>
+              <span class="tag">Interactive</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-mod_imagemap" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-mod_imagemap/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: BLOCOS -->
+    <section class="category-section" id="blocks">
+      <div class="section-intro">
+        <div class="section-badge"><i data-lucide="layout"></i> Blocos & Banners</div>
+        <h2 class="section-title">📢 Blocos Moodle</h2>
+        <p class="section-desc">
+          Plugins de blocos laterais e de conteúdo personalizáveis para destaque de avisos, recomendações e recursos nos cursos.
+        </p>
+      </div>
+
+      <div class="section-grid">
+        <!-- 6. BLOCK RECOMMENDATION -->
+        <article class="repo-card" data-search="moodle-block_recommendation block recommendation bloco recomendacao avisos banners html">
+          <div>
+            <div class="card-thumbnail">
+              <svg viewBox="0 0 400 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Block Recommendation Preview">
+                <rect width="400" height="180" rx="8" fill="var(--color-surface-2)" />
+                <rect x="16" y="16" width="368" height="148" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1" />
+                <rect x="32" y="28" width="336" height="32" rx="4" fill="var(--color-primary-highlight)" stroke="var(--color-primary)" stroke-width="1" />
+                <rect x="44" y="38" width="12" height="12" rx="2" fill="var(--color-primary)" />
+                <rect x="64" y="40" width="160" height="8" rx="2" fill="var(--color-primary)" />
+                <rect x="32" y="72" width="160" height="80" rx="4" fill="var(--color-surface-offset)" border="1" />
+                <rect x="208" y="72" width="160" height="80" rx="4" fill="var(--color-surface-offset)" border="1" />
+              </svg>
+            </div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">📢</span>
+                <h3 class="card-title">moodle-block_recommendation</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin de bloco para exibição de recomendações personalizadas em HTML, avisos estratégicos, banners e links de destaque em áreas do Moodle.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Block</span>
+              <span class="tag">Recommendation</span>
+              <span class="tag">HTML Banner</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-block_recommendation" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-block_recommendation/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: FERRAMENTAS DE ADMINISTRAÇÃO & CLI -->
+    <section class="category-section" id="admin-tools">
+      <div class="section-intro">
+        <div class="section-badge"><i data-lucide="terminal"></i> Administração & Utilitários CLI</div>
+        <h2 class="section-title">⚙️ Ferramentas de Administração & CLI</h2>
+        <p class="section-desc">
+          Soluções robustas em scripts CLI e plugins de administração para automatizar backups em lote, migração de banco de dados, filtros customizados e gestão de usuários.
+        </p>
+      </div>
+
+      <div class="section-grid">
+        <!-- 7. TOOL BRCLI -->
+        <article class="repo-card" data-search="moodle-tool_brcli tool brcli backup restore cli lote categorias administracao">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">💾</span>
+                <h3 class="card-title">moodle-tool_brcli</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Ferramenta CLI (BrCLI) para backup e restauração em lote de categorias completas de cursos no Moodle diretamente via linha de comando.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Admin Tool</span>
+              <span class="tag">CLI</span>
+              <span class="tag">Backup & Restore</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-tool_brcli" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-tool_brcli/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 8. TOOL BULKCLIENROLMENT -->
+        <article class="repo-card" data-search="moodle-tool_bulkclienrolment tool bulkclienrolment matricula inscricao lote cli administracao">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">👥</span>
+                <h3 class="card-title">moodle-tool_bulkclienrolment</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Utilitário de linha de comando para inscrição e matricular em massa de usuários em cursos do Moodle com automação por script.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Admin Tool</span>
+              <span class="tag">CLI</span>
+              <span class="tag">Bulk Enrolment</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-tool_bulkclienrolment" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-tool_bulkclienrolment/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 9. TOOL DBMIGRATE -->
+        <article class="repo-card" data-search="moodle-tool_dbmigrate tool dbmigrate migracao banco de dados mysql postgresql cli">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🗄️</span>
+                <h3 class="card-title">moodle-tool_dbmigrate</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Ferramenta CLI para migração eficiente e segura de banco de dados do Moodle entre diferentes SGBDs (como de MySQL para PostgreSQL).
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Admin Tool</span>
+              <span class="tag">CLI</span>
+              <span class="tag">DB Migrate</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-tool_dbmigrate" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-tool_dbmigrate/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 10. TOOL PARTICIPANTSCUSTOMFILTER -->
+        <article class="repo-card" data-search="moodle-tool_participantscustomfilter tool participantscustomfilter filtro perfil campo personalizado participantes">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🔍</span>
+                <h3 class="card-title">moodle-tool_participantscustomfilter</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin admin tool que adiciona suporte a filtros por campos personalizados de perfil na listagem de participantes dos cursos (/enrol/index.php).
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Admin Tool</span>
+              <span class="tag">Custom Filter</span>
+              <span class="tag">Participants</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-tool_participantscustomfilter" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-tool_participantscustomfilter/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 11. TOOL RIBBONS -->
+        <article class="repo-card" data-search="moodle-tool_ribbons tool ribbons faixa ambiente dev homolog producao">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🎗️</span>
+                <h3 class="card-title">moodle-tool_ribbons</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin de administração para identificação visual de ambientes (Desenvolvimento, Homologação e Produção) com faixas coloridas configuráveis.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Admin Tool</span>
+              <span class="tag">Ribbons</span>
+              <span class="tag">DevOps</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-tool_ribbons" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-tool_ribbons/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 12. PROFILEFIELD JSON -->
+        <article class="repo-card" data-search="moodle-profilefield_json profilefield json campo perfil usuario dados estruturados">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">📋</span>
+                <h3 class="card-title">moodle-profilefield_json</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plugin de campo de perfil de usuário em formato JSON, permitindo o armazenamento e visualização avançada de metadados estruturados.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Profile Field</span>
+              <span class="tag">JSON</span>
+              <span class="tag">User Data</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-profilefield_json" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-profilefield_json/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 13. DOCKER COMPOSE -->
+        <article class="repo-card" data-search="moodle-docker_compose docker compose ambiente desenvolvimento infra containers">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🐳</span>
+                <h3 class="card-title">moodle-docker_compose</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Modelo e orquestração Docker Compose para rápido provisionamento de ambientes de desenvolvimento local Moodle com banco de dados.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Moodle</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Docker Compose</span>
+              <span class="tag">Infra</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-docker_compose" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-docker_compose/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© moodle-by-kelsoncm — Licença GPL v3 / MIT. Desenvolvido para a comunidade Moodle.</p>
+      <p style="margin-top: 0.5rem;">
+        <a href="https://github.com/moodle-by-kelsoncm" target="_blank" rel="noopener">Organização no GitHub</a> &bull;
+        <a href="https://github.com/kelsoncm" target="_blank" rel="noopener">@kelsoncm</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
