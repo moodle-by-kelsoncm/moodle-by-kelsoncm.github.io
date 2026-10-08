@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Language buttons click handling (persist preference)
   const langButtons = document.querySelectorAll('.lang-btn');
   langButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       const targetLang = btn.getAttribute('data-lang');
       if (targetLang) {
         localStorage.setItem('user_lang', targetLang);
@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const macroCards = document.querySelectorAll('.macro-section-card');
-  const sections = document.querySelectorAll('.category-section');
 
   let currentFilter = 'all';
 
@@ -64,30 +63,46 @@ document.addEventListener('DOMContentLoaded', () => {
       let visibleCardsInMacro = 0;
       const macroSections = macroCard.querySelectorAll('.category-section');
 
-      macroSections.forEach(section => {
-        let visibleCardsInSection = 0;
-        const sectionCards = section.querySelectorAll('.repo-card');
+      if (macroSections.length > 0) {
+        macroSections.forEach(section => {
+          let visibleCardsInSection = 0;
+          const sectionCards = section.querySelectorAll('.repo-card');
 
-        sectionCards.forEach(card => {
+          sectionCards.forEach(card => {
+            const searchText = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
+            const matchesSearch = !query || searchText.includes(query);
+
+            if (matchesMacroFilter && matchesSearch) {
+              card.style.display = 'flex';
+              visibleCardsInSection++;
+              visibleCardsInMacro++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Toggle section visibility
+          if (visibleCardsInSection === 0) {
+            section.style.display = 'none';
+          } else {
+            section.style.display = 'block';
+          }
+        });
+      } else {
+        // Macro card with direct cards (without subsections)
+        const directCards = macroCard.querySelectorAll('.repo-card');
+        directCards.forEach(card => {
           const searchText = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
           const matchesSearch = !query || searchText.includes(query);
 
           if (matchesMacroFilter && matchesSearch) {
             card.style.display = 'flex';
-            visibleCardsInSection++;
             visibleCardsInMacro++;
           } else {
             card.style.display = 'none';
           }
         });
-
-        // Toggle section visibility
-        if (visibleCardsInSection === 0) {
-          section.style.display = 'none';
-        } else {
-          section.style.display = 'block';
-        }
-      });
+      }
 
       // Toggle macro card container visibility
       if (!matchesMacroFilter || (query && visibleCardsInMacro === 0)) {
