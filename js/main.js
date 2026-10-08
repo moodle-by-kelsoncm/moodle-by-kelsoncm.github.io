@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
+  // Detect current page language from <html lang="...">
+  const pageLang = document.documentElement.getAttribute('lang') || 'en';
+  const isPt = pageLang.toLowerCase().startsWith('pt');
+
   // Theme toggle
   const themeBtn = document.getElementById('themeToggleBtn');
   const themeLabel = document.getElementById('themeLabel');
@@ -23,58 +27,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateThemeUI(theme) {
     if (themeLabel) {
-      themeLabel.textContent = theme === 'dark' ? 'Escuro' : 'Claro';
+      if (isPt) {
+        themeLabel.textContent = theme === 'dark' ? 'Escuro' : 'Claro';
+      } else {
+        themeLabel.textContent = theme === 'dark' ? 'Dark' : 'Light';
+      }
     }
   }
 
-  // Filter & Search
+  // Language buttons click handling (persist preference)
+  const langButtons = document.querySelectorAll('.lang-btn');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const targetLang = btn.getAttribute('data-lang');
+      if (targetLang) {
+        localStorage.setItem('user_lang', targetLang);
+      }
+    });
+  });
+
+  // Filter & Search across macro cards and sections
   const searchInput = document.getElementById('searchInput');
   const filterBtns = document.querySelectorAll('.filter-btn');
+  const macroCards = document.querySelectorAll('.macro-section-card');
   const sections = document.querySelectorAll('.category-section');
-  const groupHeaders = document.querySelectorAll('.main-group-header');
 
   let currentFilter = 'all';
 
   function applyFilters() {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
-    sections.forEach(section => {
-      const sectionGroup = section.getAttribute('data-group');
-      let visibleCardsInSection = 0;
-      const sectionCards = section.querySelectorAll('.repo-card');
+    macroCards.forEach(macroCard => {
+      const macroGroup = macroCard.getAttribute('data-group');
+      const matchesMacroFilter = (currentFilter === 'all') || (macroGroup === currentFilter);
 
-      sectionCards.forEach(card => {
-        const cardGroup = card.getAttribute('data-group') || sectionGroup;
-        const matchesGroup = (currentFilter === 'all') || (cardGroup === currentFilter);
-        const searchText = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
-        const matchesSearch = !query || searchText.includes(query);
+      let visibleCardsInMacro = 0;
+      const macroSections = macroCard.querySelectorAll('.category-section');
 
-        if (matchesGroup && matchesSearch) {
-          card.style.display = 'flex';
-          visibleCardsInSection++;
+      macroSections.forEach(section => {
+        let visibleCardsInSection = 0;
+        const sectionCards = section.querySelectorAll('.repo-card');
+
+        sectionCards.forEach(card => {
+          const searchText = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
+          const matchesSearch = !query || searchText.includes(query);
+
+          if (matchesMacroFilter && matchesSearch) {
+            card.style.display = 'flex';
+            visibleCardsInSection++;
+            visibleCardsInMacro++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Toggle section visibility
+        if (visibleCardsInSection === 0) {
+          section.style.display = 'none';
         } else {
-          card.style.display = 'none';
+          section.style.display = 'block';
         }
       });
 
-      if (visibleCardsInSection === 0) {
-        section.style.display = 'none';
+      // Toggle macro card container visibility
+      if (!matchesMacroFilter || (query && visibleCardsInMacro === 0)) {
+        macroCard.style.display = 'none';
       } else {
-        section.style.display = 'block';
+        macroCard.style.display = 'block';
       }
-    });
-
-    // Update group headers visibility
-    groupHeaders.forEach(header => {
-      const groupType = header.getAttribute('data-group');
-      if (currentFilter !== 'all' && groupType !== currentFilter) {
-        header.style.display = 'none';
-        return;
-      }
-      // Check if any section in this group is visible
-      const matchingSections = Array.from(sections).filter(s => s.getAttribute('data-group') === groupType);
-      const hasVisible = matchingSections.some(s => s.style.display !== 'none');
-      header.style.display = hasVisible ? 'block' : 'none';
     });
   }
 
