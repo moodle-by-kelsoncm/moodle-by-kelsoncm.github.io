@@ -78,13 +78,13 @@
       <!-- FILTER BAR -->
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">
-          <i data-lucide="layout-grid"></i> Todos <span class="filter-badge">20</span>
+          <i data-lucide="layout-grid"></i> Todos <span class="filter-badge">19</span>
         </button>
         <button class="filter-btn" data-filter="plugins">
           <i data-lucide="plug"></i> Plugins Moodle <span class="filter-badge">16</span>
         </button>
         <button class="filter-btn" data-filter="others">
-          <i data-lucide="box"></i> Outros Repositórios <span class="filter-badge">4</span>
+          <i data-lucide="box"></i> Outros Repositórios <span class="filter-badge">3</span>
         </button>
       </div>
     </section>
@@ -721,166 +721,100 @@
     <section class="macro-section-card others-macro-card" id="others" data-group="others">
       <div class="main-group-header">
         <div class="main-group-badge"><i data-lucide="box"></i> Outros Projetos</div>
-        <h2 class="main-group-title">🛠️ Outros Repositórios & Infraestrutura</h2>
+        <h2 class="main-group-title">🛠️ Outros Repositórios</h2>
         <p class="main-group-desc">
-          Projetos de infraestrutura Docker, imagens de contêiner para produção, temas para documentação técnica e aplicativo mobile oficial customizado.
+          Ambientes Docker de desenvolvimento, temas para documentação técnica e aplicativo mobile oficial customizado.
         </p>
       </div>
 
-      <!-- SEÇÃO 7: CONTAINERS & INFRAESTRUTURA -->
-      <section class="category-section" id="infrastructure" data-group="others">
-        <div class="section-intro">
-          <div class="section-badge"><i data-lucide="server"></i> Containers & Infraestrutura</div>
-          <h2 class="section-title">🐳 Containers & Infraestrutura</h2>
-          <p class="section-desc">
-            Ambientes Docker prontos para desenvolvimento local e imagens corporativas endurecidas para implantação em servidores de produção.
-          </p>
-        </div>
+      <div class="section-grid">
+        <!-- 17. DOCKER COMPOSE -->
+        <article class="repo-card" data-search="docker-compose docker compose ambiente desenvolvimento local infra containers moodle" data-group="others">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🐳</span>
+                <h3 class="card-title">docker-compose</h3>
+              </div>
+            </div>
+            <p class="card-desc">
+              Modelo e orquestração Docker Compose para rápido provisionamento de ambientes de desenvolvimento local Moodle com banco de dados e mailhog.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">Docker Compose</span>
+              <span class="tag">Dev Environment</span>
+              <span class="tag">Infra</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/docker-compose" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/docker-compose/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
 
-        <div class="section-grid">
-          <!-- 17. DOCKER COMPOSE -->
-          <article class="repo-card" data-search="docker-compose docker compose ambiente desenvolvimento local infra containers moodle" data-group="others">
-            <div>
-              <div class="card-header">
-                <div class="card-title-group">
-                  <span class="card-icon">🐳</span>
-                  <h3 class="card-title">docker-compose</h3>
-                </div>
-              </div>
-              <p class="card-desc">
-                Modelo e orquestração Docker Compose para rápido provisionamento de ambientes de desenvolvimento local Moodle com banco de dados e mailhog.
-              </p>
-              <div class="card-tags">
-                <span class="tag">Docker</span>
-                <span class="tag">Docker Compose</span>
-                <span class="tag">Dev Environment</span>
-                <span class="tag">Infra</span>
+        <!-- 18. MOODLE DOCS THEME -->
+        <article class="repo-card" data-search="moodle-docs-theme sphinx tema theme python documentacao docs github pages dark mode" data-group="others">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">🎨</span>
+                <h3 class="card-title">moodle-docs-theme</h3>
               </div>
             </div>
-            <div class="card-bottom">
-              <a href="https://github.com/moodle-by-kelsoncm/docker-compose" target="_blank" rel="noopener" class="repo-link">
-                GitHub <i data-lucide="external-link"></i>
-              </a>
-              <a href="https://moodle-by-kelsoncm.github.io/docker-compose/" target="_blank" rel="noopener" class="docs-link">
-                Documentação <i data-lucide="arrow-up-right"></i>
-              </a>
+            <p class="card-desc">
+              Tema Sphinx oficial para documentação técnica de projetos Moodle, com design inspirado no Moodle Docs, modo escuro/claro, navegação responsiva e automação pronta para GitHub Pages.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Sphinx Theme</span>
+              <span class="tag">Python</span>
+              <span class="tag">Docs</span>
+              <span class="tag">GitHub Pages</span>
             </div>
-          </article>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodle-docs-theme" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://moodle-by-kelsoncm.github.io/moodle-docs-theme/" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
 
-          <!-- 18. DOCKER IMAGE PRODUCTION -->
-          <article class="repo-card" data-search="docker_image_production docker image producao production seguranca containers hardening moodle" data-group="others">
-            <div>
-              <div class="card-header">
-                <div class="card-title-group">
-                  <span class="card-icon">🔒</span>
-                  <h3 class="card-title">docker_image_production</h3>
-                </div>
-              </div>
-              <p class="card-desc">
-                Imagem Docker para Moodle customizada e otimizada para produção, baseada em práticas recomendadas de segurança sem diretórios com permissão de escrita arbitrária em disco.
-              </p>
-              <div class="card-tags">
-                <span class="tag">Docker</span>
-                <span class="tag">Production</span>
-                <span class="tag">Security</span>
-                <span class="tag">Hardening</span>
+        <!-- 19. MOODLEAPP -->
+        <article class="repo-card" data-search="moodleapp app mobile cordova ionic angular aplicativo android ios moodle" data-group="others">
+          <div>
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-icon">📱</span>
+                <h3 class="card-title">moodleapp</h3>
               </div>
             </div>
-            <div class="card-bottom">
-              <a href="https://github.com/moodle-by-kelsoncm/docker_image_production" target="_blank" rel="noopener" class="repo-link">
-                GitHub <i data-lucide="external-link"></i>
-              </a>
-              <a href="https://github.com/moodle-by-kelsoncm/docker_image_production#readme" target="_blank" rel="noopener" class="docs-link">
-                Documentação <i data-lucide="arrow-up-right"></i>
-              </a>
+            <p class="card-desc">
+              Fork e customizações do aplicativo mobile oficial do Moodle construído com Cordova, Ionic e Angular para dispositivos Android e iOS.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Mobile</span>
+              <span class="tag">Ionic</span>
+              <span class="tag">Cordova</span>
+              <span class="tag">Angular</span>
             </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- SEÇÃO 8: DOCUMENTAÇÃO & TEMAS -->
-      <section class="category-section" id="docs-themes" data-group="others">
-        <div class="section-intro">
-          <div class="section-badge"><i data-lucide="book-open"></i> Documentação & Temas</div>
-          <h2 class="section-title">🎨 Documentação & Temas</h2>
-          <p class="section-desc">
-            Ferramentas e temas de documentação técnica para padronização visual e publicação contínua no GitHub Pages.
-          </p>
-        </div>
-
-        <div class="section-grid">
-          <!-- 19. MOODLE DOCS THEME -->
-          <article class="repo-card" data-search="moodle-docs-theme sphinx tema theme python documentacao docs github pages dark mode" data-group="others">
-            <div>
-              <div class="card-header">
-                <div class="card-title-group">
-                  <span class="card-icon">🎨</span>
-                  <h3 class="card-title">moodle-docs-theme</h3>
-                </div>
-              </div>
-              <p class="card-desc">
-                Tema Sphinx oficial para documentação técnica de projetos Moodle, com design inspirado no Moodle Docs, modo escuro/claro, navegação responsiva e automação pronta para GitHub Pages.
-              </p>
-              <div class="card-tags">
-                <span class="tag">Sphinx Theme</span>
-                <span class="tag">Python</span>
-                <span class="tag">Docs</span>
-                <span class="tag">GitHub Pages</span>
-              </div>
-            </div>
-            <div class="card-bottom">
-              <a href="https://github.com/moodle-by-kelsoncm/moodle-docs-theme" target="_blank" rel="noopener" class="repo-link">
-                GitHub <i data-lucide="external-link"></i>
-              </a>
-              <a href="https://moodle-by-kelsoncm.github.io/moodle-docs-theme/" target="_blank" rel="noopener" class="docs-link">
-                Documentação <i data-lucide="arrow-up-right"></i>
-              </a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- SEÇÃO 9: APLICATIVOS MOBILE -->
-      <section class="category-section" id="mobile-apps" data-group="others">
-        <div class="section-intro">
-          <div class="section-badge"><i data-lucide="smartphone"></i> Aplicativos Mobile</div>
-          <h2 class="section-title">📱 Aplicativos Mobile</h2>
-          <p class="section-desc">
-            Aplicações móveis e clientes dedicados para acesso ao ambiente virtual de aprendizagem em smartphones e tablets.
-          </p>
-        </div>
-
-        <div class="section-grid">
-          <!-- 20. MOODLEAPP -->
-          <article class="repo-card" data-search="moodleapp app mobile cordova ionic angular aplicativo android ios moodle" data-group="others">
-            <div>
-              <div class="card-header">
-                <div class="card-title-group">
-                  <span class="card-icon">📱</span>
-                  <h3 class="card-title">moodleapp</h3>
-                </div>
-              </div>
-              <p class="card-desc">
-                Fork e customizações do aplicativo mobile oficial do Moodle construído com Cordova, Ionic e Angular para dispositivos Android e iOS.
-              </p>
-              <div class="card-tags">
-                <span class="tag">Mobile</span>
-                <span class="tag">Ionic</span>
-                <span class="tag">Cordova</span>
-                <span class="tag">Angular</span>
-              </div>
-            </div>
-            <div class="card-bottom">
-              <a href="https://github.com/moodle-by-kelsoncm/moodleapp" target="_blank" rel="noopener" class="repo-link">
-                GitHub <i data-lucide="external-link"></i>
-              </a>
-              <a href="https://github.com/moodle-by-kelsoncm/moodleapp#readme" target="_blank" rel="noopener" class="docs-link">
-                Documentação <i data-lucide="arrow-up-right"></i>
-              </a>
-            </div>
-          </article>
-        </div>
-      </section>
+          </div>
+          <div class="card-bottom">
+            <a href="https://github.com/moodle-by-kelsoncm/moodleapp" target="_blank" rel="noopener" class="repo-link">
+              GitHub <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://github.com/moodle-by-kelsoncm/moodleapp#readme" target="_blank" rel="noopener" class="docs-link">
+              Documentação <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
