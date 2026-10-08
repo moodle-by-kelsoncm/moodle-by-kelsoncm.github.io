@@ -27,35 +27,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Real-time Search across sections
+  // Filter & Search
   const searchInput = document.getElementById('searchInput');
+  const filterBtns = document.querySelectorAll('.filter-btn');
   const sections = document.querySelectorAll('.category-section');
+  const groupHeaders = document.querySelectorAll('.main-group-header');
 
-  if (searchInput) {
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase().trim();
+  let currentFilter = 'all';
 
-      sections.forEach(section => {
-        let visibleCardsInSection = 0;
-        const sectionCards = section.querySelectorAll('.repo-card');
+  function applyFilters() {
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
-        sectionCards.forEach(card => {
-          const searchText = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
-          if (!query || searchText.includes(query)) {
-            card.style.display = 'flex';
-            visibleCardsInSection++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
+    sections.forEach(section => {
+      const sectionGroup = section.getAttribute('data-group');
+      let visibleCardsInSection = 0;
+      const sectionCards = section.querySelectorAll('.repo-card');
 
-        // Hide empty sections during search
-        if (query && visibleCardsInSection === 0) {
-          section.style.display = 'none';
+      sectionCards.forEach(card => {
+        const cardGroup = card.getAttribute('data-group') || sectionGroup;
+        const matchesGroup = (currentFilter === 'all') || (cardGroup === currentFilter);
+        const searchText = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
+        const matchesSearch = !query || searchText.includes(query);
+
+        if (matchesGroup && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCardsInSection++;
         } else {
-          section.style.display = 'block';
+          card.style.display = 'none';
         }
       });
+
+      if (visibleCardsInSection === 0) {
+        section.style.display = 'none';
+      } else {
+        section.style.display = 'block';
+      }
+    });
+
+    // Update group headers visibility
+    groupHeaders.forEach(header => {
+      const groupType = header.getAttribute('data-group');
+      if (currentFilter !== 'all' && groupType !== currentFilter) {
+        header.style.display = 'none';
+        return;
+      }
+      // Check if any section in this group is visible
+      const matchingSections = Array.from(sections).filter(s => s.getAttribute('data-group') === groupType);
+      const hasVisible = matchingSections.some(s => s.style.display !== 'none');
+      header.style.display = hasVisible ? 'block' : 'none';
     });
   }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+      applyFilters();
+    });
+  });
 });
