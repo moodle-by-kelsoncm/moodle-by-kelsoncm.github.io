@@ -1,12 +1,12 @@
-# moodle-by-kelsoncm.github.io
+# Moodle by KelsonCM
 
-Site institucional e portal hub de repositórios da organização **moodle-by-kelsoncm** no GitHub.
+Site institucional e portal hub de repositórios do ecossistema **Moodle by KelsonCM** no GitHub.
 
 ## 🌐 Internacionalização & Suporte Multilíngue
 - **`/` (Root)**: Roteador inteligente com detecção automática do idioma do usuário (`navigator.language` / `localStorage`). Redireciona usuários em língua portuguesa para `/pt-br/` e aplica `/en/` como fallback (default).
 - **`/en/`**: Versão completa em Inglês (default).
 - **`/pt-br/`**: Versão completa em Português do Brasil.
-- **Seletor no Header**: Permite alternância instantânea entre `EN` e `PT-BR` com persistência em `localStorage`.
+- **Seletor no Header**: Ícones com as bandeiras dos EUA e do Brasil para alternância instantânea com persistência em `localStorage`.
 
 ---
 
