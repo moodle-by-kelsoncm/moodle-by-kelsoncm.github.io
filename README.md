@@ -11,19 +11,21 @@ Site institucional e portal hub de repositórios do ecossistema **Moodle by Kels
 ---
 
 ## 🗂️ Estrutura das Macro Seções (Grandes Cards)
-O portal agrupa os 19 projetos da organização em dois grandes cards envolventes com backgrounds e identidades visuais próprias:
+O portal agrupa os 17 projetos da organização em dois grandes cards envolventes com backgrounds e identidades visuais próprias:
 
-1. **`🔌 Plugins Moodle`** (`#plugins`) — 16 repositórios
-   - **Editores & Formatação**: `moodle-atto_justify`, `moodle-tiny_justify`, `moodle-tiny_fontsize`, `moodle-tiny_fontfamily`, `moodle-tiny_fileimport`, `moodle-editor_tiptap`, `moodle-local_tinytoolbar`
+1. **`🔌 Plugins Moodle`** (`#plugins`) — 13 repositórios
+   - **Editores & Formatação**: `moodle-tiny_justify`, `moodle-tiny_fontsize`, `moodle-tiny_fontfamily`, `moodle-tiny_fileimport`, `moodle-editor_tiptap`, `moodle-tiny_toolbar`
    - **Formatos de Curso**: `moodle-format_timeline`
-   - **Atividades**: `moodle-mod_imagemap`
-   - **Blocos**: `moodle-block_recommendation`
-   - **Ferramentas de Administração & Utilitários CLI**: `moodle-tool_brcli`, `moodle-tool_bulkclienrolment`, `moodle-tool_dbmigrate`, `moodle-tool_participantscustomfilter`, `moodle-tool_ribbons`
-   - **Campos de Perfil de Usuário**: `moodle-profilefield_json`
+   - **Atividades**: `moodle-mod_imagemap`, `moodle-mod_offlinequiz` (fork)
+   - **Inscrição**: `moodle-enrol_conditional`, `moodle-local_enrolconditions`
+   - **Ferramentas de Administração**: `moodle-tool_participantscustomfilter`, `moodle-tool_certificate` (fork)
 
-2. **`🛠️ Outros Repositórios`** (`#others`) — 3 repositórios
+2. **`🛠️ Outros Repositórios`** (`#others`) — 4 repositórios
    - `docker-compose`
    - `moodle-docs-theme`
    - `moodleapp`
+   - `moodle-plugin-skill`
+
+Ficam fora do portal os repositórios arquivados (`atto_justify`, `tool_dbmigrate`), os transferidos para outras organizações (`profilefield_json`, na `moodle-fields-suite`) e os repositórios internos (`.github`, `workspace`, `moodle-by-kelsoncm.github.io`).
 
 Acesse o portal em: [https://moodle-by-kelsoncm.github.io](https://moodle-by-kelsoncm.github.io)
