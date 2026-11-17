@@ -28,4 +28,11 @@ O portal agrupa os 17 projetos da organização em dois grandes cards envolvente
 
 Ficam fora do portal os repositórios arquivados (`atto_justify`, `tool_dbmigrate`), os transferidos para outras organizações (`profilefield_json`, na `moodle-fields-suite`) e os repositórios internos (`.github`, `workspace`, `moodle-by-kelsoncm.github.io`).
 
+## ↪️ Redirecionamentos
+
+Os repositórios de plugins seguem o padrão `moodle-{plugintype}_{pluginname}` pedido pelo Moodle Marketplace; os onze que tinham só o nome do componente foram renomeados (por exemplo `tiny_justify` → `moodle-tiny_justify`). O GitHub Pages não redireciona o endereço antigo da documentação, então este site publica:
+
+- `/<antigo>/`, `/<antigo>/en/` e `/<antigo>/pt-br/`: páginas que redirecionam para `/moodle-<antigo>/` no mesmo idioma;
+- `404.html`: leva qualquer outra página antiga (`/<antigo>/...`) para o mesmo caminho em `/moodle-<antigo>/...`.
+
 Acesse o portal em: [https://moodle-by-kelsoncm.github.io](https://moodle-by-kelsoncm.github.io)
