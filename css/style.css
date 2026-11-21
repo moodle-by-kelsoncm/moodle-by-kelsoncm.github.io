@@ -483,6 +483,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: auto;
 }
@@ -519,6 +520,16 @@ header {
 .docs-link:hover {
   color: var(--color-text);
   text-decoration: underline;
+}
+
+.docs-link.is-disabled {
+  color: var(--color-text-faint);
+  cursor: not-allowed;
+}
+
+.docs-link.is-disabled:hover {
+  color: var(--color-text-faint);
+  text-decoration: none;
 }
 
 /* FOOTER */
