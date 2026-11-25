@@ -11,14 +11,14 @@ Site institucional e portal hub de repositórios do ecossistema **Moodle by Kels
 ---
 
 ## 🗂️ Estrutura das Macro Seções (Grandes Cards)
-O portal agrupa os 17 projetos da organização em dois grandes cards envolventes com backgrounds e identidades visuais próprias:
+O portal agrupa os 12 projetos da organização em dois grandes cards envolventes com backgrounds e identidades visuais próprias:
 
-1. **`🔌 Plugins Moodle`** (`#plugins`) — 13 repositórios
-   - **Editores & Formatação**: `moodle-tiny_justify`, `moodle-tiny_fontsize`, `moodle-tiny_fontfamily`, `moodle-tiny_fileimport`, `moodle-editor_tiptap`, `moodle-tiny_toolbar`
+1. **`🔌 Plugins Moodle`** (`#plugins`) — 8 repositórios
+   - **Editores & Formatação**: `moodle-tiny_justify`, `moodle-editor_tiptap`, `moodle-tiny_toolbar`
    - **Formatos de Curso**: `moodle-format_timeline`
-   - **Atividades**: `moodle-mod_imagemap`, `moodle-mod_offlinequiz` (fork)
+   - **Atividades**: `moodle-mod_imagemap`
    - **Inscrição**: `moodle-enrol_conditional`, `moodle-local_enrolconditions`
-   - **Ferramentas de Administração**: `moodle-tool_participantscustomfilter`, `moodle-tool_certificate` (fork)
+   - **Ferramentas de Administração**: `moodle-tool_participantscustomfilter`
 
 2. **`🛠️ Outros Repositórios`** (`#others`) — 4 repositórios
    - `docker-compose`
@@ -33,7 +33,7 @@ O portal agrupa os 17 projetos da organização em dois grandes cards envolvente
 - **Miniatura** (só plugins): captura real em `img/shots/<nome>.png` (800x360, sem dados pessoais) quando a documentação do plugin tem uma; ilustração SVG inline nos demais.
 - **Favicon**: ícone da organização (`logo.png`), em `favicon.ico`, `img/favicon-64.png` e `apple-touch-icon.png`, referenciado em todas as páginas.
 
-Ficam fora do portal os repositórios arquivados (`atto_justify`, `tool_dbmigrate`), os transferidos para outras organizações (`profilefield_json`, na `moodle-fields-suite`) e os repositórios internos (`.github`, `workspace`, `moodle-by-kelsoncm.github.io`).
+Ficam fora do portal os repositórios arquivados (`atto_justify`, `tool_dbmigrate`), os transferidos para outras organizações (`profilefield_json`, na `moodle-fields-suite`; os forks `moodle-tiny_fileimport`, `moodle-tiny_fontsize`, `moodle-tiny_fontfamily`, `moodle-wordfind`, `moodle-tool_certificate`, `moodle-mod_offlinequiz` e `moodle-mod_certificatebeautiful`, na `forks-by-kelsoncm`) e os repositórios internos (`.github`, `workspace`, `moodle-by-kelsoncm.github.io`).
 
 ## ↪️ Redirecionamentos
 
@@ -41,5 +41,6 @@ Os repositórios de plugins seguem o padrão `moodle-{plugintype}_{pluginname}` 
 
 - `/<antigo>/`, `/<antigo>/en/` e `/<antigo>/pt-br/`: páginas que redirecionam para `/moodle-<antigo>/` no mesmo idioma;
 - `404.html`: leva qualquer outra página antiga (`/<antigo>/...`) para o mesmo caminho em `/moodle-<antigo>/...`.
+- forks transferidos para a `forks-by-kelsoncm` (`tiny_fileimport`, `tiny_fontsize`, `tiny_fontfamily`): `/<antigo>/`, `/moodle-<antigo>/` e qualquer página abaixo deles vão para `https://forks-by-kelsoncm.github.io/moodle-<antigo>/...`.
 
 Acesse o portal em: [https://moodle-by-kelsoncm.github.io](https://moodle-by-kelsoncm.github.io)

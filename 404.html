@@ -12,9 +12,16 @@
     // do endereço antigo (/<antigo>/...) para o mesmo caminho no endereço novo.
     (function () {
       var renamed = ["editor_tiptap", "enrol_conditional", "local_enrolconditions", "mod_imagemap",
-        "tiny_justify", "tiny_toolbar", "tool_participantscustomfilter", "format_timeline",
-        "tiny_fileimport", "tiny_fontsize", "tiny_fontfamily"];
+        "tiny_justify", "tiny_toolbar", "tool_participantscustomfilter", "format_timeline"];
+      // Forks transferidos para a organização forks-by-kelsoncm.
+      var moved = ["tiny_fileimport", "tiny_fontsize", "tiny_fontfamily"];
       var parts = window.location.pathname.split("/");
+      var name = parts.length > 1 ? parts[1].replace(/^moodle-/, "") : "";
+      if (moved.indexOf(name) !== -1) {
+        parts[1] = "moodle-" + name;
+        window.location.replace("https://forks-by-kelsoncm.github.io" + parts.join("/") + window.location.search + window.location.hash);
+        return;
+      }
       if (parts.length > 1 && renamed.indexOf(parts[1]) !== -1) {
         parts[1] = "moodle-" + parts[1];
         window.location.replace(parts.join("/") + window.location.search + window.location.hash);
