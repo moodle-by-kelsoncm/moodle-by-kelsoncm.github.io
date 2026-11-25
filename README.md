@@ -11,11 +11,10 @@ Site institucional e portal hub de repositórios do ecossistema **Moodle by Kels
 ---
 
 ## 🗂️ Estrutura das Macro Seções (Grandes Cards)
-O portal agrupa os 12 projetos da organização em dois grandes cards envolventes com backgrounds e identidades visuais próprias:
+O portal agrupa os 11 projetos da organização em dois grandes cards envolventes com backgrounds e identidades visuais próprias:
 
-1. **`🔌 Plugins Moodle`** (`#plugins`) — 8 repositórios
+1. **`🔌 Plugins Moodle`** (`#plugins`) — 7 repositórios
    - **Editores & Formatação**: `moodle-tiny_justify`, `moodle-editor_tiptap`, `moodle-tiny_toolbar`
-   - **Formatos de Curso**: `moodle-format_timeline`
    - **Atividades**: `moodle-mod_imagemap`
    - **Inscrição**: `moodle-enrol_conditional`, `moodle-local_enrolconditions`
    - **Ferramentas de Administração**: `moodle-tool_participantscustomfilter`
