@@ -420,10 +420,17 @@ header {
   background: var(--color-surface-2);
 }
 
-.card-thumbnail svg {
+.card-thumbnail svg,
+.card-thumbnail img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.card-thumbnail img {
+  aspect-ratio: 20 / 9;
+  object-fit: cover;
+  object-position: top left;
 }
 
 .card-header {
@@ -441,8 +448,11 @@ header {
 }
 
 .card-icon {
-  font-size: 1.5rem;
-  line-height: 1;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .card-title {

@@ -26,6 +26,13 @@ O portal agrupa os 17 projetos da organização em dois grandes cards envolvente
    - `moodleapp`
    - `moodle-plugin-skill`
 
+## 🖼️ Cards
+
+- **Título**: nome do repositório sem o prefixo `moodle-` (redundante no portal). A busca (`data-search`) e os links usam o nome completo.
+- **Ícone**: `img/icons/<nome>.png|svg`, o ícone próprio de cada projeto (o do Marketplace quando existe; os demais são SVG no mesmo estilo: quadrado arredondado colorido com símbolo branco).
+- **Miniatura** (só plugins): captura real em `img/shots/<nome>.png` (800x360, sem dados pessoais) quando a documentação do plugin tem uma; ilustração SVG inline nos demais.
+- **Favicon**: ícone da organização (`logo.png`), em `favicon.ico`, `img/favicon-64.png` e `apple-touch-icon.png`, referenciado em todas as páginas.
+
 Ficam fora do portal os repositórios arquivados (`atto_justify`, `tool_dbmigrate`), os transferidos para outras organizações (`profilefield_json`, na `moodle-fields-suite`) e os repositórios internos (`.github`, `workspace`, `moodle-by-kelsoncm.github.io`).
 
 ## ↪️ Redirecionamentos
